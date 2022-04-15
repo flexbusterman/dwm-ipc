@@ -63,6 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 
 #include <X11/XF86keysym.h>
+#include "movestack.c"
 
 static Key keys[] = {
 	/* modifier                     	key						function        argument */
@@ -111,8 +112,8 @@ static Key keys[] = {
 	{ 0,						XF86XK_MonBrightnessUp,					spawn,			    SHCMD("xbacklight -inc $(bc <<< \"$(xbacklight) * 0.5 + 0.15\")") },
 	{ 0,						XF86XK_MonBrightnessDown,				spawn,			    SHCMD("xbacklight -dec $(bc <<< \"$(xbacklight) * 0.5\")") },
 	{ MODKEY|ShiftMask,								XK_e,					spawn,					SHCMD("cd ~/.local/src/dwm/; alacritty -t DWMconfig -e nvim config.def.h")},
-	// { MODKEY|ShiftMask,								XK_j,					movestack,      {.i = +1 } },
-	// { MODKEY|ShiftMask,								XK_k,					movestack,      {.i = -1 } },
+	{ MODKEY|ShiftMask,								XK_j,					movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,								XK_k,					movestack,      {.i = -1 } },
 	{ MODKEY|ShiftMask|ControlMask,		XK_r,					spawn,					SHCMD("reboot")},
 	{ MODKEY|ShiftMask|ControlMask,		XK_p,					spawn,					SHCMD("poweroff")},
 	{ MODKEY,													XK_semicolon,	spawn,					SHCMD("stream")},
