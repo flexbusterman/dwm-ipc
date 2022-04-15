@@ -75,7 +75,7 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_d,					spawn,					SHCMD("sleep 0.2 && xdotool type --clearmodifiers \"$(date +\"%F \")\"")},
 	{ MODKEY,                       	XK_b,					spawn,					SHCMD("bluetoothconnect 74:5C:4B:D2:86:F7")},
 	{ MODKEY|ShiftMask,								XK_b,					spawn,					SHCMD("bluetoothctl disconnect 74:5C:4B:D2:86:F7")},
-	// { MODKEY,													XK_f,					togglefullscr,  {0} },
+	{ MODKEY,													XK_f,					togglefullscr,  {0} },
   { 0,															XK_Print,			spawn,					SHCMD("maim -f jpg -m 9 \"/home/flex/Pictures/SCREENSHOTS/$(date +\"%F %H_%M_%S.jpg\")\"")},
   { ShiftMask,											XK_Print,			spawn,					SHCMD("maim -f jpg -m 9 -s \"/home/flex/Pictures/SCREENSHOTS/$(date +\"%F %H_%M_%S.jpg\")\"")},
 	{ MODKEY,													XK_grave,			spawn,					SHCMD("dmenuunicode") },
